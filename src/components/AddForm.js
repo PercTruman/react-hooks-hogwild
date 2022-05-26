@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-function AddForm({hogs}) {
+function AddForm({hogsList, setHogsList}) {
+
     
     const [formData, setFormData]=useState({
         pigName: "",
@@ -14,6 +15,7 @@ function AddForm({hogs}) {
     function handleSubmit(e){
         e.preventDefault();
     }
+   
 
     function handleChange(e){
         const key = e.target.id
@@ -35,6 +37,7 @@ function AddForm({hogs}) {
                     <input style={{marginTop:".5rem"}}id="pigWeight"onChange={handleChange} value={formData.pigWeight}placeholder="Weight"></input>
                     <input style={{marginTop:".5rem"}}id="isGreased"onChange={handleChange} value={formData.isGreased}placeholder="Greased? Yes or No"></input>
                     <input style={{marginTop:".5rem"}}id="achievement"onChange={handleChange} value={formData.achievement}placeholder="Highest Medal Achieved"></input>
+                    <input type="submit"></input>
                 </form>
             </div>
         </label>

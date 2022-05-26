@@ -4,13 +4,12 @@ import hogs from "../porkers_data";
 import AddForm from "./AddForm";
 import Sort from "./Sort";
 import Filter from "./Filter";
-import PigTiles from "./PigTiles";
 import PigTilesList from "./PigTilesList";
 
 function App() {
   const [hogsList, setHogsList] = useState(hogs);
   const [sortValue, setSortValue] = useState("None");
-  const [showDetails, setShowDetails] = useState(false)
+
 
   function handleSortValue(e) {
     setSortValue(e.target.value);
@@ -41,13 +40,11 @@ function App() {
         handleSortValue={handleSortValue}
       />
       <Filter handleShowGreased={handleShowGreased} />
-      <AddForm hogsList={hogsList} />
+      <AddForm hogsList={hogsList} setHogsList={setHogsList}/>
       <PigTilesList
         hogsList={hogsList}
         sortValue={sortValue}
         showGreased={showGreased}
-		setShowDetails={setShowDetails}
-		showDetails={showDetails}
       />
     </div>
   );
