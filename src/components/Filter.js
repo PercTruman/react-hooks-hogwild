@@ -1,14 +1,19 @@
-import React from 'react'
+import React from "react";
 
-function Filter({hogs, showGreased, handleShowGreased}) {
+function Filter({ handleShowGreased }) {
+
   return (
     <div>
-          <label>
-            <input type="checkbox" style={{marginBottom: "2rem", marginRight:"8px"}} onChange={handleShowGreased}/>
-            Only show greased pigs
-        </label>
+      <label>
+        <input
+          type="checkbox"
+          style={{ marginBottom: "2rem", marginRight: "8px" }}
+          onChange={handleShowGreased}
+        />
+        Only show greased pigs
+      </label>
     </div>
-  )
+  );
 }
 
-export default Filter
+export default Filter;
